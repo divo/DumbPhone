@@ -15,6 +15,7 @@
 		93B013372A8E557800B97CA0 /* ScreenTimeShieldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B013362A8E557800B97CA0 /* ScreenTimeShieldUITests.swift */; };
 		93B013392A8E557800B97CA0 /* ScreenTimeShieldUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B013382A8E557800B97CA0 /* ScreenTimeShieldUITestsLaunchTests.swift */; };
 		93B013472A8E645400B97CA0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B013462A8E645400B97CA0 /* Model.swift */; };
+		93B013492A8E6C9700B97CA0 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B013482A8E6C9700B97CA0 /* Schedule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		93B013382A8E557800B97CA0 /* ScreenTimeShieldUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeShieldUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		93B013452A8E566500B97CA0 /* ScreenTimeShield.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScreenTimeShield.entitlements; sourceTree = "<group>"; };
 		93B013462A8E645400B97CA0 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		93B013482A8E6C9700B97CA0 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				93B013452A8E566500B97CA0 /* ScreenTimeShield.entitlements */,
 				93B0131B2A8E557700B97CA0 /* ScreenTimeShieldApp.swift */,
 				93B0131D2A8E557700B97CA0 /* ContentView.swift */,
+				93B013482A8E6C9700B97CA0 /* Schedule.swift */,
 				93B013462A8E645400B97CA0 /* Model.swift */,
 				93B0131F2A8E557800B97CA0 /* Assets.xcassets */,
 				93B013212A8E557800B97CA0 /* Preview Content */,
@@ -264,6 +267,7 @@
 			files = (
 				93B013472A8E645400B97CA0 /* Model.swift in Sources */,
 				93B0131E2A8E557700B97CA0 /* ContentView.swift in Sources */,
+				93B013492A8E6C9700B97CA0 /* Schedule.swift in Sources */,
 				93B0131C2A8E557700B97CA0 /* ScreenTimeShieldApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
