@@ -6,18 +6,22 @@
 //
 
 import SwiftUI
+import FamilyControls
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+  @State private var isShowingRestrict = false
+  
   @EnvironmentObject var model: Model
+  
+  var body: some View {
+    VStack {
+      Button("Select apps to restrict") {
+        isShowingRestrict = true
+      }.familyActivityPicker(isPresented: $isShowingRestrict, selection: $model.selectionToRestrict)
+      
     }
+    .padding()
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
