@@ -19,8 +19,9 @@ struct ContentView: View {
         isShowingRestrict = true
       }.familyActivityPicker(isPresented: $isShowingRestrict, selection: $model.selectionToRestrict)
       
+    }.onChange(of: model.selectionToRestrict) { newValue in
+      model.setRestrictions()
     }
-    .padding()
   }
 }
 
