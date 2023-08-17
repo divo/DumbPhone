@@ -16,11 +16,13 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+  @EnvironmentObject var model: Model
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+      .environmentObject(Model())
+  }
 }

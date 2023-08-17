@@ -13,9 +13,12 @@ struct ScreenTimeShieldApp: App {
   
   @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
   
+  @StateObject var model = Model.shared
+  
   var body: some Scene {
     WindowGroup {
       ContentView()
+        .environmentObject(model)
     }
   }
 }
