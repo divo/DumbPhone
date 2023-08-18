@@ -27,11 +27,31 @@ class ShieldActionExtension: ShieldActionDelegate {
     
     override func handle(action: ShieldAction, for webDomain: WebDomainToken, completionHandler: @escaping (ShieldActionResponse) -> Void) {
         // Handle the action as needed.
+      // Handle the action as needed.
+      switch action {
+      case .primaryButtonPressed:
+        print("Primary")
+//          ManagedSettingsStore().shield.applications = nil // How to remove the block forever
         completionHandler(.close)
+      case .secondaryButtonPressed:
+        completionHandler(.close)
+      @unknown default:
+          fatalError()
+      }
     }
     
     override func handle(action: ShieldAction, for category: ActivityCategoryToken, completionHandler: @escaping (ShieldActionResponse) -> Void) {
         // Handle the action as needed.
+      // Handle the action as needed.
+      switch action {
+      case .primaryButtonPressed:
+        print("Primary")
+//          ManagedSettingsStore().shield.applications = nil // How to remove the block forever
         completionHandler(.close)
+      case .secondaryButtonPressed:
+        completionHandler(.close)
+      @unknown default:
+          fatalError()
+      }
     }
 }

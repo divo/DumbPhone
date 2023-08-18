@@ -25,12 +25,12 @@ class ShieldConfigurationExtension: ShieldConfigurationDataSource {
     
     override func configuration(shielding webDomain: WebDomain) -> ShieldConfiguration {
         // Customize the shield as needed for web domains.
-        ShieldConfiguration()
+      customShieldConfiguration()
     }
     
     override func configuration(shielding webDomain: WebDomain, in category: ActivityCategory) -> ShieldConfiguration {
         // Customize the shield as needed for web domains shielded because of their category.
-        ShieldConfiguration()
+      customShieldConfiguration()
     }
   
   func customShieldConfiguration() -> ShieldConfiguration {
