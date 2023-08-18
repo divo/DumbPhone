@@ -15,6 +15,7 @@ struct ContentView: View {
   @EnvironmentObject var model: Model
   @State var start: Date = Calendar.current.startOfDay(for: Date.now)
   @State var end: Date = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: Date())!
+  @State var activeRestriction = ContentView.restrictionSet()
   
   var body: some View {
     NavigationView {
@@ -23,6 +24,11 @@ struct ContentView: View {
           Text("Unskippable app limits").padding(.horizontal)
           Spacer()
         }
+        
+        if activeRestriction {
+          Text("You have a restriction setup").padding(20)
+        }
+        
         VStack {
           DatePicker("Schedule start", selection: $start, displayedComponents: .hourAndMinute)
           DatePicker("Schedule End", selection: $end, displayedComponents: .hourAndMinute)
@@ -37,9 +43,14 @@ struct ContentView: View {
       }.onChange(of: model.selectionToRestrict) { newValue in
         model.setRestrictions()
         Schedule.setSchedule(start: start, end: end)
+        activeRestriction = ContentView.restrictionSet()
       }.navigationTitle("Unplug ∎")
         .navigationBarTitleDisplayMode(.large)
     }
+  }
+  
+  static func restrictionSet() -> Bool {
+    UserDefaults().object(forKey: "active-restriction") != nil
   }
 }
 

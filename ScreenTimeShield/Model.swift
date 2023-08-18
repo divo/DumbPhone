@@ -26,5 +26,8 @@ class Model: ObservableObject {
     
     store.shield.applications = applications.applicationTokens.isEmpty ? nil : applications.applicationTokens
     store.shield.applicationCategories = applications.categoryTokens.isEmpty ? nil : ShieldSettings.ActivityCategoryPolicy.specific(applications.categoryTokens)
+    store.shield.webDomains = applications.webDomainTokens.isEmpty ? nil : applications.webDomainTokens
+    
+    UserDefaults().set(true, forKey: "active-restriction")
   }
 }
