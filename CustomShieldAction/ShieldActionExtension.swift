@@ -6,7 +6,7 @@
 //
 
 import ManagedSettings
-
+          
 // Override the functions below to customize the shield actions used in various situations.
 // The system provides a default response for any functions that your subclass doesn't override.
 // Make sure that your class name matches the NSExtensionPrincipalClass in your Info.plist.
@@ -15,7 +15,9 @@ class ShieldActionExtension: ShieldActionDelegate {
         // Handle the action as needed.
         switch action {
         case .primaryButtonPressed:
-          completionHandler(.defer)
+          print("Primary")
+//          ManagedSettingsStore().shield.applications = nil // How to remove the block forever
+          completionHandler(.close)
         case .secondaryButtonPressed:
           completionHandler(.close)
         @unknown default:
