@@ -30,7 +30,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
     
     // TODO: This will need to be user editable and setup at a later point in lifecycle
-    Schedule.setSchedule()
+//    Schedule.setSchedule()
     return true
   }
   

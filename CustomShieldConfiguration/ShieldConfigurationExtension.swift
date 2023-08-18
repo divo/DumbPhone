@@ -46,7 +46,7 @@ class ShieldConfigurationExtension: ShieldConfigurationDataSource {
                                title: primaryLabel,
                                subtitle: subtitleLabel,
                                primaryButtonLabel: primaryButton,
-                               primaryButtonBackgroundColor: UIColor.systemBlue,
+                               primaryButtonBackgroundColor: Style.primaryUIColor,
                                secondaryButtonLabel: secondaryButton)
   }
 }
