@@ -15,7 +15,6 @@ struct ContentView: View {
   @EnvironmentObject var model: Model
   @State var start: Date = Calendar.current.startOfDay(for: Date.now)
   @State var end: Date = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: Date())!
-  @State var activeRestriction = ContentView.restrictionSet()
   
   var body: some View {
     NavigationView {
@@ -25,8 +24,8 @@ struct ContentView: View {
           Spacer()
         }
         
-        if activeRestriction {
-          Text("You have a restriction setup").padding(20)
+        if model.selectionToRestrict.applicationTokens.count != 0 {
+          Text("You have restricted \(model.selectionToRestrict.applicationTokens.count) apps").padding(20)
         }
         
         VStack {
@@ -41,16 +40,14 @@ struct ContentView: View {
         Spacer()
         
       }.onChange(of: model.selectionToRestrict) { newValue in
+        model.saveSelection()
         model.setRestrictions()
-        Schedule.setSchedule(start: start, end: end)
-        activeRestriction = ContentView.restrictionSet()
+        Schedule.setSchedule(start: start, end: end, event: model.activityEvent())
       }.navigationTitle("Unplug ∎")
         .navigationBarTitleDisplayMode(.large)
+    }.onAppear {
+      model.loadSelection()
     }
-  }
-  
-  static func restrictionSet() -> Bool {
-    UserDefaults().object(forKey: "active-restriction") != nil
   }
 }
 
