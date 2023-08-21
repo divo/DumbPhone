@@ -41,8 +41,15 @@ struct ContentView: View {
         
       }.onChange(of: model.selectionToRestrict) { newValue in
         model.saveSelection()
-        model.setRestrictions()
         Schedule.setSchedule(start: start, end: end, event: model.activityEvent())
+      }.onChange(of: start) { newValue in
+        if !model.isEmpty() {
+          Schedule.setSchedule(start: start, end: end, event: model.activityEvent())
+        }
+      }.onChange(of: end) { newValue in
+        if !model.isEmpty() {
+          Schedule.setSchedule(start: start, end: end, event: model.activityEvent())
+        }
       }.navigationTitle("Unplug ∎")
         .navigationBarTitleDisplayMode(.large)
     }.onAppear {
