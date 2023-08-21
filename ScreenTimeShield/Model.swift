@@ -19,6 +19,7 @@ class Model: ObservableObject {
   private let encoder = PropertyListEncoder()
   private let decoder = PropertyListDecoder()
   private let userDefaultsKey = "ScreenTimeSeletion"
+  private let userDefaultsSuite = "group.screentimeshield"
   
   @Published var selectionToRestrict: FamilyActivitySelection = FamilyActivitySelection()
   
@@ -31,23 +32,47 @@ class Model: ObservableObject {
   }
   
   private func savedSelection() -> FamilyActivitySelection? {
-    let defaults = UserDefaults.standard
+    let defaults = UserDefaults(suiteName: userDefaultsSuite)!
     guard let data = defaults.data(forKey: userDefaultsKey) else { return nil }
     
     return try? decoder.decode(FamilyActivitySelection.self, from: data)
   }
   
   func saveSelection() {
-    let defaults = UserDefaults.standard
+    let defaults = UserDefaults(suiteName: userDefaultsSuite)!
+    let data = try? encoder.encode(selectionToRestrict)
     
-    defaults.set(try? encoder.encode(selectionToRestrict), forKey: userDefaultsKey)
+    defaults.set(data, forKey: userDefaultsKey)
+    defaults.synchronize()
   }
   
   func setRestrictions() {
-    let applications = Model.shared.selectionToRestrict
+    let applications = self.selectionToRestrict
     
     store.shield.applications = applications.applicationTokens.isEmpty ? nil : applications.applicationTokens
     store.shield.applicationCategories = applications.categoryTokens.isEmpty ? nil : ShieldSettings.ActivityCategoryPolicy.specific(applications.categoryTokens)
     store.shield.webDomains = applications.webDomainTokens.isEmpty ? nil : applications.webDomainTokens
+  }
+  
+  func clearRestrictions() {
+    store.shield.applications = nil
+    store.shield.applicationCategories = nil
+    store.shield.webDomains = nil
+  }
+  
+  func isEmpty() -> Bool {
+    return selectionToRestrict.applicationTokens.isEmpty
+      && selectionToRestrict.categoryTokens.isEmpty
+      && selectionToRestrict.webDomainTokens.isEmpty
+  }
+  
+  func activityEvent() -> DeviceActivityEvent {
+    let applications = Model.shared.selectionToRestrict
+    return DeviceActivityEvent(
+      applications: applications.applicationTokens,
+      categories: applications.categoryTokens,
+      webDomains: applications.webDomainTokens,
+      threshold: DateComponents(minute: 0)
+    )
   }
 }
