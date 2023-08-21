@@ -87,7 +87,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		93B013182A8E557700B97CA0 /* Unplug Screentime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unplug Screentime.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93B013182A8E557700B97CA0 /* ScreenTimeShield.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenTimeShield.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B0131B2A8E557700B97CA0 /* ScreenTimeShieldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeShieldApp.swift; sourceTree = "<group>"; };
 		93B0131D2A8E557700B97CA0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		93B0131F2A8E557800B97CA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		93B013192A8E557700B97CA0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				93B013182A8E557700B97CA0 /* Unplug Screentime.app */,
+				93B013182A8E557700B97CA0 /* ScreenTimeShield.app */,
 				93B013282A8E557800B97CA0 /* ScreenTimeShieldTests.xctest */,
 				93B013322A8E557800B97CA0 /* ScreenTimeShieldUITests.xctest */,
 				93B013502A8E74FC00B97CA0 /* CustomShieldConfiguration.appex */,
@@ -296,7 +296,7 @@
 			);
 			name = ScreenTimeShield;
 			productName = ScreenTimeShield;
-			productReference = 93B013182A8E557700B97CA0 /* Unplug Screentime.app */;
+			productReference = 93B013182A8E557700B97CA0 /* ScreenTimeShield.app */;
 			productType = "com.apple.product-type.application";
 		};
 		93B013272A8E557800B97CA0 /* ScreenTimeShieldTests */ = {
@@ -715,7 +715,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.halfspud.ScreenTimeShield;
-				PRODUCT_NAME = "Unplug Screentime";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -747,7 +747,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.halfspud.ScreenTimeShield;
-				PRODUCT_NAME = "Unplug Screentime";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
