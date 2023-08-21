@@ -13,12 +13,25 @@ extension DeviceActivityName {
 }
 
 class Schedule {
-  static public func setSchedule(start: Date, end: Date) {
+  static public func setSchedule(start: Date, end: Date, event: DeviceActivityEvent) {
     let schedule = DeviceActivitySchedule(intervalStart: components(from: start),
                                           intervalEnd: components(from: end),
                                           repeats: true)
     
+    
+    let center = DeviceActivityCenter()
+    center.stopMonitoring()
+
+    let eventName = DeviceActivityEvent.Name("ScreenTimeShield.Event")
+
     do {
+      try center.startMonitoring(
+        .daily,
+        during: schedule,
+        events: [
+          eventName: event
+        ]
+      )
       try DeviceActivityCenter().startMonitoring(.daily, during: schedule)
     } catch {
       print("Error setting schedule: \(error)")

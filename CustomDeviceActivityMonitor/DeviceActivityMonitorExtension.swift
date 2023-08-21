@@ -12,39 +12,35 @@ import DeviceActivity
 class DeviceActivityMonitorExtension: DeviceActivityMonitor {
   // This is called when the Schedule starts
   override func intervalDidStart(for activity: DeviceActivityName) {
-        super.intervalDidStart(for: activity)
-        
-        // Handle the start of the interval.
-    }
-    
+    super.intervalDidStart(for: activity)
+    let model = Model.shared
+    model.loadSelection()
+    model.setRestrictions()
+  }
+  
   // This is called when the Schedule ends
   override func intervalDidEnd(for activity: DeviceActivityName) {
-        super.intervalDidEnd(for: activity)
-        
-        // Handle the end of the interval.
-    }
-    
-    override func eventDidReachThreshold(_ event: DeviceActivityEvent.Name, activity: DeviceActivityName) {
-        super.eventDidReachThreshold(event, activity: activity)
-        
-        // Handle the event reaching its threshold.
-    }
-    
-    override func intervalWillStartWarning(for activity: DeviceActivityName) {
-        super.intervalWillStartWarning(for: activity)
-        
-        // Handle the warning before the interval starts.
-    }
-    
-    override func intervalWillEndWarning(for activity: DeviceActivityName) {
-        super.intervalWillEndWarning(for: activity)
-        
-        // Handle the warning before the interval ends.
-    }
-    
-    override func eventWillReachThresholdWarning(_ event: DeviceActivityEvent.Name, activity: DeviceActivityName) {
-        super.eventWillReachThresholdWarning(event, activity: activity)
-        
-        // Handle the warning before the event reaches its threshold.
-    }
+    super.intervalDidEnd(for: activity)
+    let model = Model.shared
+    model.clearRestrictions()
+  }
+  
+  override func eventDidReachThreshold(_ event: DeviceActivityEvent.Name, activity: DeviceActivityName) {
+    super.eventDidReachThreshold(event, activity: activity)
+  }
+  
+  override func intervalWillStartWarning(for activity: DeviceActivityName) {
+    super.intervalWillStartWarning(for: activity)
+    print("SCREENTIMESHIELD intervalWillStartWarning")
+  }
+  
+  override func intervalWillEndWarning(for activity: DeviceActivityName) {
+    super.intervalWillEndWarning(for: activity)
+    print("SCREENTIMESHIELD intervalWillEndWarning")
+  }
+  
+  override func eventWillReachThresholdWarning(_ event: DeviceActivityEvent.Name, activity: DeviceActivityName) {
+    super.eventWillReachThresholdWarning(event, activity: activity)
+    print("SCREENTIMESHIELD eventWillReachThresholdWarning")
+  }
 }

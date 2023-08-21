@@ -29,8 +29,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
       await requestFamilyControls()
     }
     
-    // TODO: This will need to be user editable and setup at a later point in lifecycle
-//    Schedule.setSchedule()
     return true
   }
   
