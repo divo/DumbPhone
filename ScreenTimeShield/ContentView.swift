@@ -13,8 +13,6 @@ struct ContentView: View {
   @State private var isShowingRestrict = false
   
   @EnvironmentObject var model: Model
-  @State var start: Date = Calendar.current.startOfDay(for: Date.now)
-  @State var end: Date = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: Date())!
   
   var body: some View {
     NavigationView {
@@ -26,11 +24,12 @@ struct ContentView: View {
         
         if model.selectionToRestrict.applicationTokens.count != 0 {
           Text("You have restricted \(model.selectionToRestrict.applicationTokens.count) apps").padding(20)
+//          Text(model.selectionToRestrict.applications.first?.localizedDisplayName ?? "")
         }
         
         VStack {
-          DatePicker("Schedule start", selection: $start, displayedComponents: .hourAndMinute)
-          DatePicker("Schedule End", selection: $end, displayedComponents: .hourAndMinute)
+          DatePicker("Schedule start", selection: $model.start, displayedComponents: .hourAndMinute)
+          DatePicker("Schedule End", selection: $model.end, displayedComponents: .hourAndMinute)
         }.padding(20)
         Button("Select apps to restrict") {
           isShowingRestrict = true
@@ -41,14 +40,14 @@ struct ContentView: View {
         
       }.onChange(of: model.selectionToRestrict) { newValue in
         model.saveSelection()
-        Schedule.setSchedule(start: start, end: end, event: model.activityEvent())
-      }.onChange(of: start) { newValue in
+        Schedule.setSchedule(start: model.start, end: model.end, event: model.activityEvent())
+      }.onChange(of: model.start) { newValue in
         if !model.isEmpty() {
-          Schedule.setSchedule(start: start, end: end, event: model.activityEvent())
+          Schedule.setSchedule(start: model.start, end: model.end, event: model.activityEvent())
         }
-      }.onChange(of: end) { newValue in
+      }.onChange(of: model.end) { newValue in
         if !model.isEmpty() {
-          Schedule.setSchedule(start: start, end: end, event: model.activityEvent())
+          Schedule.setSchedule(start: model.start, end: model.end, event: model.activityEvent())
         }
       }.navigationTitle("Unplug ∎")
         .navigationBarTitleDisplayMode(.large)

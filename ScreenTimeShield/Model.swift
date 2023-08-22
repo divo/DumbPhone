@@ -19,9 +19,22 @@ class Model: ObservableObject {
   private let encoder = PropertyListEncoder()
   private let decoder = PropertyListDecoder()
   private let userDefaultsKey = "ScreenTimeSeletion"
-  private let userDefaultsSuite = "group.screentimeshield"
+  private static let userDefaultsSuite = "group.screentimeshield"
   
   @Published var selectionToRestrict: FamilyActivitySelection = FamilyActivitySelection()
+  @Published var start: Date = (UserDefaults(suiteName: Model.userDefaultsSuite)?.object(forKey: "start") as? Date) ??
+    Calendar.current.startOfDay(for: Date.now) {
+    didSet {
+      UserDefaults(suiteName: Model.userDefaultsSuite)!.set(start, forKey: "start")
+    }
+  }
+  
+  @Published var end: Date = (UserDefaults(suiteName: Model.userDefaultsSuite)?.object(forKey: "end") as? Date) ??
+    Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: Date())! {
+    didSet {
+      UserDefaults(suiteName: Model.userDefaultsSuite)!.set(end, forKey: "end")
+    }
+  }
   
   class var shared: Model {
     return _model
@@ -32,14 +45,14 @@ class Model: ObservableObject {
   }
   
   private func savedSelection() -> FamilyActivitySelection? {
-    let defaults = UserDefaults(suiteName: userDefaultsSuite)!
+    let defaults = UserDefaults(suiteName: Model.userDefaultsSuite)!
     guard let data = defaults.data(forKey: userDefaultsKey) else { return nil }
     
     return try? decoder.decode(FamilyActivitySelection.self, from: data)
   }
   
   func saveSelection() {
-    let defaults = UserDefaults(suiteName: userDefaultsSuite)!
+    let defaults = UserDefaults(suiteName: Model.userDefaultsSuite)!
     let data = try? encoder.encode(selectionToRestrict)
     
     defaults.set(data, forKey: userDefaultsKey)
