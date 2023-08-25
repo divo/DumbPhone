@@ -9,6 +9,7 @@ import Foundation
 import FamilyControls
 import ManagedSettings
 import DeviceActivity
+import SwiftUI
 
 private let _model = Model()
 
@@ -20,6 +21,8 @@ class Model: ObservableObject {
   private let decoder = PropertyListDecoder()
   private let userDefaultsKey = "ScreenTimeSeletion"
   private static let userDefaultsSuite = "group.screentimeshield"
+
+  @AppStorage("inside_interval", store: UserDefaults(suiteName: Model.userDefaultsSuite)) var insideInterval: Bool = false
   
   @Published var selectionToRestrict: FamilyActivitySelection = FamilyActivitySelection()
   @Published var start: Date = (UserDefaults(suiteName: Model.userDefaultsSuite)?.object(forKey: "start") as? Date) ??
@@ -30,7 +33,7 @@ class Model: ObservableObject {
   }
   
   @Published var end: Date = (UserDefaults(suiteName: Model.userDefaultsSuite)?.object(forKey: "end") as? Date) ??
-    Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: Date())! {
+    Calendar.current.startOfDay(for: Date.now) {
     didSet {
       UserDefaults(suiteName: Model.userDefaultsSuite)!.set(end, forKey: "end")
     }

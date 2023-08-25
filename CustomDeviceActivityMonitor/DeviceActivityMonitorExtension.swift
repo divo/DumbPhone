@@ -16,6 +16,7 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
     let model = Model.shared
     model.loadSelection()
     model.setRestrictions()
+    model.insideInterval = true
   }
   
   // This is called when the Schedule ends
@@ -23,6 +24,7 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
     super.intervalDidEnd(for: activity)
     let model = Model.shared
     model.clearRestrictions()
+    model.insideInterval = false
   }
   
   override func eventDidReachThreshold(_ event: DeviceActivityEvent.Name, activity: DeviceActivityName) {
@@ -31,16 +33,13 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
   
   override func intervalWillStartWarning(for activity: DeviceActivityName) {
     super.intervalWillStartWarning(for: activity)
-    print("SCREENTIMESHIELD intervalWillStartWarning")
   }
   
   override func intervalWillEndWarning(for activity: DeviceActivityName) {
     super.intervalWillEndWarning(for: activity)
-    print("SCREENTIMESHIELD intervalWillEndWarning")
   }
   
   override func eventWillReachThresholdWarning(_ event: DeviceActivityEvent.Name, activity: DeviceActivityName) {
     super.eventWillReachThresholdWarning(event, activity: activity)
-    print("SCREENTIMESHIELD eventWillReachThresholdWarning")
   }
 }
