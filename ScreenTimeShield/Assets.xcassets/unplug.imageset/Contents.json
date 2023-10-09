@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "unplug.png",
+      "filename" : "appicon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "unplug 1.png",
+      "filename" : "appicon 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "unplug 2.png",
+      "filename" : "appicon 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
