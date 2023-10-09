@@ -37,7 +37,7 @@ class ShieldConfigurationExtension: ShieldConfigurationDataSource {
     let primaryLabel = ShieldConfiguration.Label(text: "Unplug", color: UIColor.darkGray)
     let subtitleLabel = ShieldConfiguration.Label(text: "App limits reached", color: UIColor.darkGray)
     
-    let primaryButton = ShieldConfiguration.Label(text: "Close", color: UIColor.systemBackground)
+    let primaryButton = ShieldConfiguration.Label(text: "Close", color: .white)
     let secondaryButton = ShieldConfiguration.Label(text: "", color: UIColor.darkGray)
     
     return ShieldConfiguration(backgroundBlurStyle: UIBlurEffect.Style.extraLight,
