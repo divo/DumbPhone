@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "93B013172A8E557700B97CA0"
-               BuildableName = "ScreenTimeShield.app"
+               BuildableName = "Unplug.app"
                BlueprintName = "ScreenTimeShield"
                ReferencedContainer = "container:ScreenTimeShield.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "93B013172A8E557700B97CA0"
-            BuildableName = "ScreenTimeShield.app"
+            BuildableName = "Unplug.app"
             BlueprintName = "ScreenTimeShield"
             ReferencedContainer = "container:ScreenTimeShield.xcodeproj">
          </BuildableReference>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "93B013172A8E557700B97CA0"
-            BuildableName = "ScreenTimeShield.app"
+            BuildableName = "Unplug.app"
             BlueprintName = "ScreenTimeShield"
             ReferencedContainer = "container:ScreenTimeShield.xcodeproj">
          </BuildableReference>
