@@ -72,7 +72,7 @@ struct ContentView: View {
         .navigationBarTitleDisplayMode(.large)
     }.onAppear {
       model.loadSelection()
-    }
+    }.navigationViewStyle(StackNavigationViewStyle())
   }
 }
 
