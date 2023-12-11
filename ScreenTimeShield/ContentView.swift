@@ -8,15 +8,13 @@
 import SwiftUI
 import FamilyControls
 import Foundation
+import AlertToast
 
 struct ContentView: View {
   @State private var isShowingRestrict = false
-  
   @EnvironmentObject var model: Model
+  @State var showToast: Bool = false
   
-  init() {
-
-  }
   
   var body: some View {
     NavigationView {
@@ -49,9 +47,19 @@ struct ContentView: View {
           }
         }
         
-      }.onChange(of: model.selectionToRestrict) { newValue in
-        model.saveSelection()
-        Schedule.setSchedule(start: Model.start, end: Model.end, event: model.activityEvent())
+      }.toast(isPresenting: $showToast, alert: {
+        AlertToast(displayMode: .alert, type: .error(Style.errorColor), title: "Cannot remove apps from block")
+      })
+      .onChange(of: model.selectionToRestrict) { newValue in
+        if model.validateRestriction() {
+          model.saveSelection()
+          Schedule.setSchedule(start: Model.start, end: Model.end, event: model.activityEvent())
+        } else {
+          // TODO: Show warning
+          print("Cannot remove apps from restrictions")
+          showToast = true
+          model.loadSelection()
+        }
       }.navigationTitle("Dumb Phone μ")
         .navigationBarTitleDisplayMode(.large)
     }.onAppear {

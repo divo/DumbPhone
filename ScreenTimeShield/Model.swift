@@ -44,6 +44,16 @@ class Model: ObservableObject {
     return try? decoder.decode(FamilyActivitySelection.self, from: data)
   }
   
+  // Ensure the user is not removing any blocks
+  func validateRestriction() -> Bool {
+    guard let existingSelection = savedSelection() else {
+      return true
+    }
+    return existingSelection.applicationTokens == existingSelection.applicationTokens.intersection(selectionToRestrict.applicationTokens)
+      && existingSelection.webDomainTokens == existingSelection.webDomainTokens.intersection(selectionToRestrict.webDomainTokens)
+      && existingSelection.categoryTokens == existingSelection.categoryTokens.intersection(selectionToRestrict.categoryTokens)
+  }
+  
   func saveSelection() {
     let defaults = UserDefaults(suiteName: Model.userDefaultsSuite)!
     let data = try? encoder.encode(selectionToRestrict)
