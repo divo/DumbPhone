@@ -1,6 +1,6 @@
 //
-//  ScreenTimeShieldApp.swift
-//  ScreenTimeShield
+//  DumbPhoneApp.swift
+//  DumbPhone
 //
 //  Created by Steven Diviney on 17/08/2023.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 import FamilyControls
 
 @main
-struct ScreenTimeShieldApp: App {
+struct DumbPhoneApp: App {
   
   @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
   

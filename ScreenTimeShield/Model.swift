@@ -1,6 +1,6 @@
 //
 //  Model.swift
-//  ScreenTimeShield
+//  DumbPhone
 //
 //  Created by Steven Diviney on 17/08/2023.
 //
@@ -20,7 +20,7 @@ class Model: ObservableObject {
   private let encoder = PropertyListEncoder()
   private let decoder = PropertyListDecoder()
   private let userDefaultsKey = "ScreenTimeSeletion"
-  private static let userDefaultsSuite = "group.screentimeshield"
+  private static let userDefaultsSuite = "group.DumbPhone"
 
   @AppStorage("inside_interval", store: UserDefaults(suiteName: Model.userDefaultsSuite)) var insideInterval: Bool = false
   

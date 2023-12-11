@@ -1,6 +1,6 @@
 //
 //  Schedule.swift
-//  ScreenTimeShield
+//  DumbPhone
 //
 //  Created by Steven Diviney on 17/08/2023.
 //
@@ -22,7 +22,7 @@ class Schedule {
     let center = DeviceActivityCenter()
     center.stopMonitoring()
 
-    let eventName = DeviceActivityEvent.Name("ScreenTimeShield.Event")
+    let eventName = DeviceActivityEvent.Name("DumbPhone.Event")
 
     do {
       try center.startMonitoring(
