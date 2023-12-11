@@ -1,13 +1,13 @@
 //
-//  ScreenTimeShieldUITestsLaunchTests.swift
-//  ScreenTimeShieldUITests
+//  DumbPhoneUITestsLaunchTests.swift
+//  DumbPhoneUITests
 //
 //  Created by Steven Diviney on 17/08/2023.
 //
 
 import XCTest
 
-final class ScreenTimeShieldUITestsLaunchTests: XCTestCase {
+final class DumbPhoneUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
