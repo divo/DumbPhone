@@ -19,6 +19,7 @@ class Schedule {
                                           repeats: true)
     
     
+    
     let center = DeviceActivityCenter()
     center.stopMonitoring()
 
@@ -37,7 +38,7 @@ class Schedule {
       print("Error setting schedule: \(error)")
     }
   }
-
+  
   static func components(from date: Date) -> DateComponents {
     Calendar.current.dateComponents([.hour, .minute], from: date)
   }

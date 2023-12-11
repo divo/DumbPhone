@@ -20,24 +20,14 @@ class Model: ObservableObject {
   private let encoder = PropertyListEncoder()
   private let decoder = PropertyListDecoder()
   private let userDefaultsKey = "ScreenTimeSeletion"
-  private static let userDefaultsSuite = "group.DumbPhone"
+  private static let userDefaultsSuite = "group.halfspud.DumbPhone"
 
-  @AppStorage("inside_interval", store: UserDefaults(suiteName: Model.userDefaultsSuite)) var insideInterval: Bool = false
+//  @AppStorage("inside_interval", store: UserDefaults(suiteName: Model.userDefaultsSuite)) var insideInterval: Bool = false
   
   @Published var selectionToRestrict: FamilyActivitySelection = FamilyActivitySelection()
-  @Published var start: Date = (UserDefaults(suiteName: Model.userDefaultsSuite)?.object(forKey: "start") as? Date) ??
-    Calendar.current.startOfDay(for: Date.now) {
-    didSet {
-      UserDefaults(suiteName: Model.userDefaultsSuite)!.set(start, forKey: "start")
-    }
-  }
   
-  @Published var end: Date = (UserDefaults(suiteName: Model.userDefaultsSuite)?.object(forKey: "end") as? Date) ??
-    Calendar.current.startOfDay(for: Date.now) {
-    didSet {
-      UserDefaults(suiteName: Model.userDefaultsSuite)!.set(end, forKey: "end")
-    }
-  }
+  static let start: Date = Calendar.current.startOfDay(for: Date.now)
+  static let end: Date = Date(timeInterval: 86399, since: Model.start)
   
   class var shared: Model {
     return _model

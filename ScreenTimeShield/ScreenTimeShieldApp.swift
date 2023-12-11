@@ -25,6 +25,9 @@ struct DumbPhoneApp: App {
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "AvenirNextCondensed-Bold", size: 28)!]
+    UINavigationBar.appearance().tintColor = Style.fontUIColor
+    UINavigationBar.appearance().barTintColor = Style.fontUIColor
     Task {
       await requestFamilyControls()
     }
