@@ -18,7 +18,7 @@
                BlueprintIdentifier = "93B0134F2A8E74FC00B97CA0"
                BuildableName = "CustomShieldConfiguration.appex"
                BlueprintName = "CustomShieldConfiguration"
-               ReferencedContainer = "container:ScreenTimeShield.xcodeproj">
+               ReferencedContainer = "container:Dumb Phone.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -32,7 +32,7 @@
                BlueprintIdentifier = "93B013172A8E557700B97CA0"
                BuildableName = "Dumb Phone.app"
                BlueprintName = "ScreenTimeShield"
-               ReferencedContainer = "container:ScreenTimeShield.xcodeproj">
+               ReferencedContainer = "container:Dumb Phone.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -63,7 +63,7 @@
             BlueprintIdentifier = "93B013172A8E557700B97CA0"
             BuildableName = "Dumb Phone.app"
             BlueprintName = "ScreenTimeShield"
-            ReferencedContainer = "container:ScreenTimeShield.xcodeproj">
+            ReferencedContainer = "container:Dumb Phone.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "93B013172A8E557700B97CA0"
             BuildableName = "Dumb Phone.app"
             BlueprintName = "ScreenTimeShield"
-            ReferencedContainer = "container:ScreenTimeShield.xcodeproj">
+            ReferencedContainer = "container:Dumb Phone.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

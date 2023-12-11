@@ -418,7 +418,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 93B013132A8E557700B97CA0 /* Build configuration list for PBXProject "ScreenTimeShield" */;
+			buildConfigurationList = 93B013132A8E557700B97CA0 /* Build configuration list for PBXProject "Dumb Phone" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -995,7 +995,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		93B013132A8E557700B97CA0 /* Build configuration list for PBXProject "ScreenTimeShield" */ = {
+		93B013132A8E557700B97CA0 /* Build configuration list for PBXProject "Dumb Phone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93B0133A2A8E557800B97CA0 /* Debug */,

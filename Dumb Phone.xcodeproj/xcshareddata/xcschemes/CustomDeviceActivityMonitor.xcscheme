@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1430"
-   version = "1.7">
+   wasCreatedForAppExtension = "YES"
+   version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -14,10 +15,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "93EA81C02A8F8BB4005258D5"
+               BuildableName = "CustomDeviceActivityMonitor.appex"
+               BlueprintName = "CustomDeviceActivityMonitor"
+               ReferencedContainer = "container:Dumb Phone.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "93B013172A8E557700B97CA0"
                BuildableName = "Dumb Phone.app"
                BlueprintName = "ScreenTimeShield"
-               ReferencedContainer = "container:ScreenTimeShield.xcodeproj">
+               ReferencedContainer = "container:Dumb Phone.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,14 +46,16 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
+      askForAppToLaunch = "Yes"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
+      allowLocationSimulation = "YES"
+      launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
@@ -46,7 +63,7 @@
             BlueprintIdentifier = "93B013172A8E557700B97CA0"
             BuildableName = "Dumb Phone.app"
             BlueprintName = "ScreenTimeShield"
-            ReferencedContainer = "container:ScreenTimeShield.xcodeproj">
+            ReferencedContainer = "container:Dumb Phone.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -55,7 +72,9 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES">
+      debugDocumentVersioning = "YES"
+      askForAppToLaunch = "Yes"
+      launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
@@ -63,7 +82,7 @@
             BlueprintIdentifier = "93B013172A8E557700B97CA0"
             BuildableName = "Dumb Phone.app"
             BlueprintName = "ScreenTimeShield"
-            ReferencedContainer = "container:ScreenTimeShield.xcodeproj">
+            ReferencedContainer = "container:Dumb Phone.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
