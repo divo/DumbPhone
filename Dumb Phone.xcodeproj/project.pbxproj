@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9302C5352B278F3D00F2C111 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 9302C5342B278F3D00F2C111 /* AlertToast */; };
 		937DAD6F2A92A1F40051327C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B013462A8E645400B97CA0 /* Model.swift */; };
 		93B0131C2A8E557700B97CA0 /* ScreenTimeShieldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B0131B2A8E557700B97CA0 /* ScreenTimeShieldApp.swift */; };
 		93B0131E2A8E557700B97CA0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B0131D2A8E557700B97CA0 /* ContentView.swift */; };
@@ -123,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9302C5352B278F3D00F2C111 /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +297,9 @@
 				93EA81CA2A8F8BB4005258D5 /* PBXTargetDependency */,
 			);
 			name = ScreenTimeShield;
+			packageProductDependencies = (
+				9302C5342B278F3D00F2C111 /* AlertToast */,
+			);
 			productName = ScreenTimeShield;
 			productReference = 93B013182A8E557700B97CA0 /* Dumb Phone.app */;
 			productType = "com.apple.product-type.application";
@@ -427,6 +432,9 @@
 				Base,
 			);
 			mainGroup = 93B0130F2A8E557700B97CA0;
+			packageReferences = (
+				93D9E7652B278EDB00DFD5CB /* XCRemoteSwiftPackageReference "AlertToast" */,
+			);
 			productRefGroup = 93B013192A8E557700B97CA0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1059,6 +1067,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		93D9E7652B278EDB00DFD5CB /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9302C5342B278F3D00F2C111 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93D9E7652B278EDB00DFD5CB /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 93B013102A8E557700B97CA0 /* Project object */;
 }
