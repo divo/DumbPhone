@@ -13,6 +13,10 @@ struct ContentView: View {
   @State private var isShowingRestrict = false
   
   @EnvironmentObject var model: Model
+  
+  init() {
+    UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Avenir-Next-Condensed", size: 20)!]
+  }
  
   var body: some View {
     NavigationView {
@@ -68,7 +72,7 @@ struct ContentView: View {
         if !model.isEmpty() {
           Schedule.setSchedule(start: model.start, end: model.end, event: model.activityEvent())
         }
-      }.navigationTitle("Unplug ∎")
+      }.navigationTitle("Dumb Phone μ")
         .navigationBarTitleDisplayMode(.large)
     }.onAppear {
       model.loadSelection()

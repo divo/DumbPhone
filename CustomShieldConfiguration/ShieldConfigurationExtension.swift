@@ -34,8 +34,8 @@ class ShieldConfigurationExtension: ShieldConfigurationDataSource {
     }
   
   func customShieldConfiguration() -> ShieldConfiguration {
-    let primaryLabel = ShieldConfiguration.Label(text: "Unplug", color: UIColor.lightGray)
-    let subtitleLabel = ShieldConfiguration.Label(text: "App limits reached", color: UIColor.lightGray)
+    let primaryLabel = ShieldConfiguration.Label(text: "Dumb Phone", color: UIColor.lightGray)
+    let subtitleLabel = ShieldConfiguration.Label(text: "This app is blocked", color: UIColor.lightGray)
     
     let primaryButton = ShieldConfiguration.Label(text: "Close", color: .black)
     let secondaryButton = ShieldConfiguration.Label(text: "", color: UIColor.lightGray)
